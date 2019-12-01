@@ -7,16 +7,13 @@
             <h1><a href="/">Nerd Wannabe</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.11.2019, 12:14</p>
-            <h2><a href="">1, 2, 3... probando</a></h2>
-            <p>¿Anda esto?</p>
-        </div>
-
-        <div>
-            <p>published: 1.12.2019, 12:14</p>
-            <h2><a href="">Nerdeadas de domingo</a></h2>
-            <p>Mmmm... tengo mis serias dudas</p>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %} 
         </div>
     </body>
 </html>
